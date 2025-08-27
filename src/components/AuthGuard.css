@@ -1,0 +1,114 @@
+.auth-guard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+.auth-guard-content {
+  text-align: center;
+  color: #e5e5e5;
+}
+
+.auth-guard-icon {
+  margin-bottom: 1.5rem;
+  color: #e50914;
+  opacity: 0.8;
+}
+
+.auth-guard-content h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.auth-guard-content p {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  max-width: 400px;
+}
+
+.auth-guard-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.auth-guard-btn {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-transform: none;
+}
+
+.auth-guard-btn.primary {
+  background: linear-gradient(135deg, #e50914 0%, #b8070f 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+.auth-guard-btn.primary:hover {
+  background: linear-gradient(135deg, #f40612 0%, #c8080f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
+}
+
+.auth-guard-btn.secondary {
+  background: transparent;
+  color: #e5e5e5;
+  border: 2px solid rgba(229, 9, 20, 0.5);
+}
+
+.auth-guard-btn.secondary:hover {
+  background: rgba(229, 9, 20, 0.1);
+  border-color: #e50914;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.auth-guard-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .auth-guard-container {
+    margin: 1rem;
+    padding: 1.5rem;
+    min-height: 50vh;
+  }
+  
+  .auth-guard-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .auth-guard-content p {
+    font-size: 0.9rem;
+  }
+  
+  .auth-guard-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .auth-guard-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}

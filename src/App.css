@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background-attachment: fixed;
+  color: #1f2937;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global button styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+button:not(:disabled):active {
+  transform: translateY(0);
+}
+
+/* Button ripple effect */
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.6s, height 0.6s;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+button > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Global input styles */
+input, select {
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, select:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  transform: translateY(-1px);
+}
+
+input:hover, select:hover {
+  transform: translateY(-1px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device styles */
+  button, .button, input[type="submit"], input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Larger tap targets for links */
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  /* Remove hover effects on touch devices */
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Better spacing for mobile */
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  /* Ensure minimum touch targets */
+  button, .button, input[type="submit"], input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 0.9rem;
+  }
+  
+  /* Better form inputs on mobile */
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    font-size: 12px;
+  }
+}

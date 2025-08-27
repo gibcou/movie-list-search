@@ -1,0 +1,144 @@
+.filter-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.filter-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.filter-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.filter-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.filter-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+  letter-spacing: 0.25px;
+}
+
+.filter-select {
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.filter-select:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clear-filter-button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: #64748b;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  align-self: end;
+  height: fit-content;
+}
+
+.clear-filter-button:hover {
+  background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+  color: #475569;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.clear-filter-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .filter-section {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .filter-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .filter-controls {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .filter-select {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .clear-filter-button {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .filter-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-select,
+  .clear-filter-button {
+    padding: 0.875rem 1rem;
+  }
+}

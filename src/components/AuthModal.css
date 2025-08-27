@@ -1,0 +1,153 @@
+/* Auth Modal Styles */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.auth-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.auth-modal-close:hover {
+  background: rgba(220, 38, 38, 0.8);
+  transform: scale(1.1);
+}
+
+.auth-modal-close:active {
+  transform: scale(0.95);
+}
+
+.auth-modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.auth-modal-body {
+  width: 100%;
+}
+
+/* Scrollbar Styling for Modal Content */
+.auth-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.auth-modal-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.auth-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.5);
+  border-radius: 3px;
+}
+
+.auth-modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .auth-modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .auth-modal-content {
+    max-height: 95vh;
+  }
+  
+  .auth-modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .auth-modal-close svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Animation for modal exit */
+.auth-modal-overlay.closing {
+  animation: fadeOut 0.2s ease-in;
+}
+
+.auth-modal-content.closing {
+  animation: slideOut 0.2s ease-in;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
